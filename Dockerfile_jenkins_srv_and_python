@@ -1,0 +1,14 @@
+FROM jenkins/jenkins:lts
+
+USER root
+RUN apt-get update
+
+RUN apt-get install python3 -y
+RUN apt-get install -y python3-pip
+
+# Install app dependencies
+RUN pip install --upgrade pip
+
+# Install Docker CLI only
+RUN apt-get update
+RUN curl -sSL https://get.docker.com/ | sh
