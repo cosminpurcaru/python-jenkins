@@ -10,7 +10,7 @@ ENV PATH="$VIRTUAL_ENV:$PATH"
 COPY . .
 
 # Install app dependencies
-RUN source $WORKDIR/venv/activate
+RUN . $WORKDIR/venv/activate
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
